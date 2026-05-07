@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+  
+  --color-cyber-black: #0A0A0B;
+  --color-cyber-gray: #141416;
+  --color-cyber-blue: #00D1FF;
+  --color-cyber-border: #2A2A2E;
+  --color-cyber-blue-glow: rgba(0, 209, 255, 0.2);
+  
+  --shadow-cyber: 0 0 15px rgba(0, 209, 255, 0.2);
+  --shadow-cyber-strong: 0 0 25px rgba(0, 209, 255, 0.4);
+}
+
+@layer base {
+  body {
+    @apply bg-cyber-black text-[#E0E0E0] selection:bg-cyber-blue selection:text-cyber-black;
+  }
+}
+
+.cyber-border {
+  @apply border border-cyber-border;
+}
+
+.panel-bg {
+  @apply bg-cyber-gray;
+}
+
+.mono {
+  @apply font-mono text-[11px] uppercase tracking-[1px];
+}
+
+.hover-glow {
+  @apply transition-all duration-300 hover:shadow-cyber hover:border-cyber-blue/50;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 209, 255, 0.6);
+}
+
+/* Chatbase Custom Style to match theme if possible */
+#chatbase-bubble-button {
+  background-color: #00D1FF !important;
+}
